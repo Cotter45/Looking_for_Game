@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/seancotter/Desktop/lfg_project/backend/logs/.3ad8476000dd9c774bcb2e9919342c531a621770-audit.json",
+    "files": [
+        {
+            "date": 1651920639977,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/info-2022-05-07.log",
+            "hash": "410ad9871179fa505020c5bc40eb966f"
+        }
+    ],
+    "hashType": "md5"
+}

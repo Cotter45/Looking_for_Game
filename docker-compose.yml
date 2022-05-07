@@ -1,0 +1,106 @@
+version: "3.8"
+
+services:
+
+  database:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    cap_add:
+      - SYS_NICE
+    volumes: 
+      - ./docker/data/mysql:/var/lib/mysql:delegated
+    ports:
+      - "3306"
+    environtment:
+      MYSQL_ROOT_PASSWORD: 'KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM='
+      MYSQL_HOST: database
+      MYSQL_DATABSE: meridian_db_v2
+      MYSQL_USER: docker 
+      MYSQL_PASSWORD: KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM=
+      MYSQL_ROOT_HOST: '%'
+
+  nginx:
+    depends_on:
+      - api 
+      - client 
+      - websockets
+    restart: always
+    build:
+      dockerfile: Dockerfile 
+      context: ./nginx
+    volumes: 
+      - ./nginx/certs:/etc/nginx/certs 
+    ports:
+      - "3050:443"
+      - "3070:80"
+
+  redis:
+    image: redis:6.2-alpine
+    restart: always
+    ports: 
+      - "6379"
+    command: redis-server --save "" --appendonly no --requirepass KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM= --
+
+  api: 
+    build:
+      dockerfile: Dockerfile
+      context: "./backend"
+      restart: always
+      depends_on:
+        - database 
+        - redis 
+        - websockets 
+      volumes:
+        - /app/node_modules
+        - ./backend:/app:delegated 
+      environment:
+        MYSQL_HOST_IP: MYSQL_DATABSE
+
+    websockets:
+      build:
+        dockerfile: Dockerfile
+        context: "./websockets"
+      restart: always 
+      depends_on:
+        - database 
+        - redis 
+      volumes:
+        - /app/node_modules 
+        - ./websockets:/app/delegated 
+      ports: 
+        - "8000"
+      environment:
+        MYSQL_HOST_IP: MYSQL_DATABSE
+
+    client: 
+      stdin_open: true
+      environment:
+        - CHOKIDAR_USEPOLLING=true
+        - WDS_SOCKET_PORT=0
+      build:
+        dockerfile: Dockerfile
+        context: "./frontend"
+      volumes:
+        - /usr/src/app/node_modules
+        - ./frontend:/usr/src/app:delegated
+
+    phpmyadmin:
+      image: phpmyadmin/phpmyadmin
+      depends_on:
+        - database 
+      restart: always 
+      environment:
+        PMA_HOST: database 
+        PMA_PORT: 3306
+        PMA_USER: docker 
+        PMA_PASSWORD: KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM=
+        MYSQL_ROOT_PASSWORD: KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM=
+        MYSQL_USER: docker 
+        MYSQL_PASSWORD: KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM=
+        MYSQL_HOST: database 
+      ports: 
+        - "8080:80"
+      volumes: 
+        - /sessions
+        - ./docker/server_config/php/php.ini:/usr/local/etc/php/conf.d/php-phpmyadmin.ini:delegated

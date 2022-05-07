@@ -1,0 +1,5 @@
+{"timeStamp": "2022-04-12T09:18:45.568Z" , "level": "info", "message": "GET /api/users/logs 200 4 - 6.869 ms"},
+{"timeStamp": "2022-04-12T09:18:49.544Z" , "level": "info", "message": "GET /api/users/logs 200 129 - 6.236 ms"},
+{"timeStamp": "2022-04-12T09:19:11.704Z" , "level": "info", "message": "GET /api/users/logs 200 256 - 179.231 ms"},
+{"timeStamp": "2022-04-12T09:19:17.761Z" , "level": "info", "message": "GET /api/users/logs 200 385 - 197.069 ms"},
+{"timeStamp": "2022-04-12T09:56:15.557Z" , "level": "info", "message": "GET /api/users/logs 200 514 - 205.074 ms"},

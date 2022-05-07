@@ -1,0 +1,6 @@
+{"timeStamp": "2022-04-09T12:20:35.781Z" , "level": "error", "message": "500 - static is not defined - /api/users/update - GET - ::ffff:127.0.0.1"},
+{"timeStamp": "2022-04-09T12:20:49.532Z" , "level": "error", "message": "500 - pic.location.replact is not a function - /api/users/update - GET - ::ffff:127.0.0.1"},
+{"timeStamp": "2022-04-09T12:28:45.378Z" , "level": "error", "message": "500 - pic is not defined - /api/users/update - GET - ::ffff:127.0.0.1"},
+{"timeStamp": "2022-04-09T12:33:40.064Z" , "level": "error", "message": "500 - ParkPicture.findAll(...).sort is not a function - /api/users/update - GET - ::ffff:127.0.0.1"},
+{"timeStamp": "2022-04-09T12:33:58.837Z" , "level": "error", "message": "500 - ParkPicture.findAll(...).sort is not a function - /api/users/update - GET - ::ffff:127.0.0.1"},
+{"timeStamp": "2022-04-09T12:45:22.291Z" , "level": "error", "message": "500 - Cannot read property 'id' of undefined - /api/users/update - GET - ::ffff:127.0.0.1"},
