@@ -1,0 +1,102 @@
+
+Table Users {
+  id int [pk, increment] // auto-increment
+  username varchar
+  email varchar
+  phone_number varchar 
+  carrier varchar 
+  profile_picture_url varchar 
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Friends {
+  id int [pk, increment]
+  user_one int [ref: - Users.id]
+  user_two int [ref: - Users.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table UserGames {
+  id int [pk, increment]
+  steam_id int 
+  name varchar 
+  description text 
+  image_url text 
+  is_free boolean
+  price string
+  rating int 
+  rating_url text
+  user_id int [ref: < Users.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table UserGameCategories {
+  id int [pk, increment]
+  category varchar 
+  user_id int [ref: - Users.id]
+}
+
+Table UserGameGenres {
+  id int [pk, increment]
+  genre varchar
+  user_id int [ref: - Users.id]
+}
+
+Table LookingForGames {
+  id int [pk, increment]
+  title varchar 
+  image_url text 
+  game_id int [ref: - UserGames.id]
+  creator_id int [ref: - Users.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table UsersLookingForGames {
+  id int [pk, increment]
+  user_id int [ref: - Users.id]
+  lfg_id int [ref: - LookingForGames.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Chats {
+  id int [pk, increment]
+  title varchar 
+  description text 
+  image_url text 
+  public boolean
+  lfg_id int [ref: - LookingForGames.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Messages {
+  id int [pk, increment]
+  message text 
+  image_url text 
+  video_url text 
+  user_id int [ref: - Users.id]
+  chat_id int [ref: - Chats.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Photos {
+  id int [pk, increment]
+  image_url text 
+  user_id int [ref: - Users.id]
+  createdAt timestamp
+  updatedAt timestamp
+}
+
+Table Videos {
+  id int [pk, increment]
+  video_url text
+  user_id int [ref: - Users.id]
+  createdAt timestamp
+  updatedAt timestamp
+}

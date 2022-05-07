@@ -5,6 +5,7 @@ const asyncHandler = require("express-async-handler");
 const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, restoreUser } = require("../../utils/auth");
 const { User } = require("../../db/models");
+const redisClient = require("../../utils/redis/index");
 
 const router = express.Router();
 
