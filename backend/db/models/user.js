@@ -5,8 +5,8 @@ const bcrypt = require("bcryptjs");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     toSafeObject() {
-      const { id, username, email } = this; // context will be the User instance
-      return { id, username, email };
+      const { id, username, email, phone_number, carrier, profile_picture_url } = this; // context will be the User instance
+      return { id, username, email, phone_number, carrier, profile_picture_url };
     }
     validatePassword(password) {
       return bcrypt.compareSync(password, this.hashedPassword.toString());
@@ -39,6 +39,27 @@ module.exports = (sequelize, DataTypes) => {
     };
     static associate(models) {
       // define association here
+      User.hasMany(models.Video, { foreignKey: 'user_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      User.hasMany(models.Photo, { foreignKey: 'user_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      User.hasMany(models.Message, { foreignKey: 'user_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      User.hasMany(models.UserGameGenre, { foreignKey: 'user_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      User.hasMany(models.UserGameCategory, { foreignKey: 'user_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      User.hasMany(models.UserGame, { foreignKey: 'user_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      
+      const friendMap = {
+        through: models.Friend,
+        foreignKey: 'user_one',
+        otherKey: 'user_two',
+        as: 'userFriends'
+      }
+      User.belongsToMany(models.User, friendMap);
+
+      const gameMap = {
+        through: models.UsersLookingForGame,
+        foreignKey: 'lfg_id',
+        otherKey: 'user_id'
+      }
+      User.belongsToMany(models.LookingForGame, gameMap);
     }
   };
   User.init(
@@ -69,18 +90,23 @@ module.exports = (sequelize, DataTypes) => {
           len: [60, 60],
         },
       },
+      phone_number: DataTypes.STRING,
+      carrier: DataTypes.STRING,
+      profile_picture_url: DataTypes.TEXT
     },
     {
       sequelize,
       modelName: "User",
       defaultScope: {
         attributes: {
-          exclude: ["hashedPassword", "email", "createdAt", "updatedAt"],
+          exclude: ["hashedPassword"]
         },
       },
       scopes: {
         currentUser: {
-          attributes: { exclude: ["hashedPassword"] },
+          attributes: { 
+            exclude: ["hashedPassword"]
+          },
         },
         loginUser: {
           attributes: {},

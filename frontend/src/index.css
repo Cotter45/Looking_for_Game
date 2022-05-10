@@ -14,6 +14,26 @@
   --dark-highlight: #393f4d;
 }
 
+.theme-dark {
+  --light-background: #323232;
+  --dark-background: #212121;
+  --light-accent: #B4CFB0;
+  --dark-accent: #789395;
+  --light-highlight: #FFF1CE;
+  --dark-highlight: #ffffffff;
+  color: white;
+}
+
+.theme-light {
+  --light-background: #f5f5f5;
+  --dark-background: #DADED4;
+  --light-accent: #4D774E;
+  --dark-accent: #164A41;
+  --light-highlight: #FDF8F5;
+  --dark-highlight: #393f4d;
+  color: black;
+}
+
 html, body, #root {
   overflow: hidden;
   background-color: var(--dark-background);
@@ -68,76 +88,9 @@ h1,h2,h3,h4,h5,h6 {
   }
 }
 
-.nav_bar_container {
-  width: 100vw;
-  height: 75px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to right, #164A41, #164A41 25%, #4D774E 75%, #9DC88D 100%);
-  color: white;
-}
-
-.nav_bar {
-  width: 90%;
-  height: 90%;
-  max-width: 1500px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.title {
-  cursor: pointer;
-}
-
-.hamburger {
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
-.hamburger .line {
-  display: block;
-  width: 40px;
-  height: 3px;
-  background-color: var(--light-highlight);
-  margin-block: 10px;
-  border-radius: 4px;
-  transition: transform .5s, opacity .25s;
-}
-
-.hamburger.active .line:nth-child(1) {
-  transform: translateY(13px) rotate(45deg);
-}
-
-.hamburger.active .line:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .line:nth-child(3) {
-  transform: translateY(-13px) rotate(-45deg);
-}
-
-.nav_bar_menu {
-  width: 40vw;
-  max-width: 300px;
-  background-color: var(--light-background);
-  position: absolute;
-  right: 0;
-  top: 75px;
-  color: black;
-  padding: 15px;
+.column {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  border-radius: 0 0 0 5px;
 }
 
 .fade_in {
@@ -197,7 +150,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .button {
   padding: 5px 20px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   color: var(--light-highlight);
   background: linear-gradient(to left, var(--dark-accent), var(--light-accent));
@@ -207,15 +160,13 @@ h1,h2,h3,h4,h5,h6 {
   transition: all .5s ease-in-out;
   width: 100%;
   max-width: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .button:hover,
 .button:focus {
-  border: 2px solid rgba(112, 76, 182, 0.4);
-}
-
-.button:active {
-  background-color: rgba(112, 76, 182, 0.2);
+  border: 2px solid var(--dark-accent);
 }
 
 .asyncButton {
@@ -225,7 +176,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .asyncButton:after {
   content: '';
-  background-color: rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.15);
   /* background: linear-gradient(to right, var(--dark-accent), var(--light-accent)); */
   display: block;
   position: absolute;
@@ -234,7 +185,7 @@ h1,h2,h3,h4,h5,h6 {
   left: 0;
   top: 0;
   opacity: 0;
-  transition: width 1s linear, opacity 0.5s ease 1s;
+  transition: width .2s linear, opacity 0.5s ease 1s;
 }
 
 .asyncButton:active:after {
@@ -263,7 +214,7 @@ h1,h2,h3,h4,h5,h6 {
   background-color: var(--light-background);
   padding: 20px;
   border-radius: 10px;
-  width: 90vw;
+  width: 95vw;
   max-width: 1000px;
   display: flex;
   flex-direction: column;

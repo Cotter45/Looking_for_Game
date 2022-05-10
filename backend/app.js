@@ -7,11 +7,11 @@ const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const { ValidationError } = require("sequelize");
 
-
 const routes = require("./routes");
 const { environment } = require("./config");
 const isProduction = environment === "production";
 const winston = require('./utils/winston');
+const testRouter = require("./routes/api/test");
   
 const app = express();
 
@@ -23,6 +23,7 @@ app.use(express.json());
 if (!isProduction) {
   // enable cors only in development
   app.use(cors());
+  app.use('/test', testRouter);
 }
 
 // helmet helps set a variety of headers to better secure your app
