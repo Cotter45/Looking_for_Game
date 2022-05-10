@@ -1,5 +1,5 @@
 'use strict';
-const games = require("../steam/combined_games3.json");
+const games = require("../steam/combined_games.json");
 
 module.exports = {
   async up (queryInterface, Sequelize) {

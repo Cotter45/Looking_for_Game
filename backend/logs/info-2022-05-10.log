@@ -1,0 +1,4 @@
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 8.364 ms","timestamp":"2022-05-10T19:42:26.504Z"}
+{"level":"info","message":"GET /api/session 304 - - 81.359 ms","timestamp":"2022-05-10T19:42:26.804Z"}
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 9.679 ms","timestamp":"2022-05-10T19:42:29.659Z"}
+{"level":"info","message":"GET /api/session 304 - - 8.562 ms","timestamp":"2022-05-10T19:42:29.783Z"}

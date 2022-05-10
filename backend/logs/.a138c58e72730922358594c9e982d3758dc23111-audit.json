@@ -9,6 +9,16 @@
             "date": 1651920639976,
             "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-07.log",
             "hash": "3a7a185e49b90b683076214f53494a77"
+        },
+        {
+            "date": 1652152207694,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-09.log",
+            "hash": "138b58de6c2d7a8458dd639c1553977d"
+        },
+        {
+            "date": 1652211739316,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-10.log",
+            "hash": "e976a7179b81f7cda8d50823e2b099a1"
         }
     ],
     "hashType": "md5"

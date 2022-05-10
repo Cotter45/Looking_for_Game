@@ -2,13 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// let games = require("./games.json");
-// let fullgames = require("./full_games.json");
-// let zane = require("./zane_full_game.json");
-let combined = require("./combined_games.json");
-let combined1 = require("./combined_games2.json");
-let combined2 = require("./combined_games3.json");
-// let images = require("./zane_images.json");
+let games = require("./combined_games.json");
+let categories = require("./game_categories.json");
+let genres = require("./game_genres.json");
 
 const url = 'http://store.steampowered.com/api/appdetails?appids='
 
@@ -82,7 +78,24 @@ let timeout;
 //   else game.image_url = image.screenshot;
 // }
 
-// combined = JSON.stringify(combined);
+let temp = {};
+for (let game of games) {
+  temp[game.steam_id] = game;
+}
+let tempCategories = [];
+for (let category of categories) {
+  if (temp[category.game_id]) tempCategories.push(category)
+  else continue
+}
+let tempGenres = [];
+for (let genre of genres) {
+  if (temp[genre.game_id]) tempGenres.push(genres);
+  else continue;
+}
 
-// fs.writeFileSync(path.resolve(__dirname, 'combined_games3.json'), combined);
-console.log(combined.length, combined1.length, combined2.length, "combined games")
+console.log(tempCategories.length, tempGenres.length, games.length)
+tempCategories = JSON.stringify(Array.from(new Set(tempCategories)));
+tempGenres = JSON.stringify(Array.from(new Set(tempGenres)));
+
+fs.writeFileSync(path.resolve(__dirname, 'format_game_categories.json'), tempCategories);
+fs.writeFileSync(path.resolve(__dirname, 'format_game_genres.json'), tempGenres);

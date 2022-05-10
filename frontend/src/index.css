@@ -21,7 +21,8 @@
   --dark-accent: #789395;
   --light-highlight: #FFF1CE;
   --dark-highlight: #ffffffff;
-  color: white;
+  color: var(--light-highlight);
+  /* color: white; */
 }
 
 .theme-light {
@@ -31,7 +32,7 @@
   --dark-accent: #164A41;
   --light-highlight: #FDF8F5;
   --dark-highlight: #393f4d;
-  color: black;
+  color: var(--dark-highlight);
 }
 
 html, body, #root {

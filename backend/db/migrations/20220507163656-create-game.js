@@ -24,7 +24,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       steam_id: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        unique: true,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
