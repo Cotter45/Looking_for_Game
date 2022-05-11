@@ -11,7 +11,7 @@ const routes = require("./routes");
 const { environment } = require("./config");
 const isProduction = environment === "production";
 const winston = require('./utils/winston');
-const testRouter = require("./routes/api/test");
+const testRouter = require("./routes/api/test_models");
   
 const app = express();
 

@@ -189,5 +189,52 @@ router.delete('/genre/:genre', asyncHandler( async(req, res, next) => {
   res.status(200).json({"message": "Genre deleted"});
 }));
 
+/**
+ * MODEL UserGame 
+ */
+
+// CREATE / POST
+router.post("/user_game", asyncHandler(async (req, res) => {
+  const usergame = await UserGame.create(req.body);
+  res.status(201).json(usergame);
+}));
+
+// READ / GET
+router.get('/user_game/:name', asyncHandler( async(req, res, next) => {
+  const usergame = await UserGame.findOne({
+    where: {
+      name: req.params.name
+    },
+    include: [ { all: true } ]
+  });
+  if (!usergame) next();
+  res.status(200).json(usergame);
+}));
+
+// UDATE / PUT
+router.put('/user_game/:name', asyncHandler( async(req, res, next) => {
+  const usergame = await UserGame.findOne({
+    where: {
+      name: req.params.name
+    }
+  });
+  if (!usergame) next();
+  await usergame.update(req.body);
+  res.status(200).json(usergame);
+}));
+
+// DELETE
+router.delete('/user_game/:name', asyncHandler( async(req, res, next) => {
+  const usergame = await UserGame.findOne({
+    where: {
+      name: req.params.name
+    }
+  });
+  if (!usergame) next();
+  await usergame.destroy();
+  res.status(200).json({"message": "Looking for Game deleted"});
+}));
+
+
 
 module.exports = router;

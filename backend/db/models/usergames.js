@@ -23,7 +23,8 @@ module.exports = (sequelize, DataTypes) => {
     is_free: DataTypes.BOOLEAN,
     price: DataTypes.STRING,
     game_id: DataTypes.INTEGER,
-    user_id: DataTypes.INTEGER
+    user_id: DataTypes.INTEGER,
+    steam_id: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'UserGame',
