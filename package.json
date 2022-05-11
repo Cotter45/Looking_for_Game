@@ -10,7 +10,8 @@
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
     "start": "NODE_ENV='production' npm start --prefix backend",
-    "test": "npm test --preifx backend"
+    "migrate": "npx sequelize db:migrate && npx sequelize db:seed:all",
+    "test": "npm test --prefix backend"
   },
   "keywords": [],
   "author": "",
