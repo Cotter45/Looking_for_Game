@@ -12,6 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Genre.hasMany(models.UserGameGenre, { foreignKey: 'genre_id', foreignKeyConstraint: true });
+      const gameMapper = {
+        through: 'GameGenre',
+        foreignKey: 'genre_id',
+        otherKey: 'game_id',
+      }
+      Genre.belongsToMany(models.Game, gameMapper);
     }
   }
   Genre.init({

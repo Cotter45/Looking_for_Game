@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Modal } from "../context/modal/modal";
+import Splash from "../components/home";
 
 
 function Home() {
@@ -35,6 +36,7 @@ function Home() {
           </li>
         </ul>
       </header>
+      <Splash />
           {/* <img
             style={{ cursor: "pointer" }}
             onClick={() => {

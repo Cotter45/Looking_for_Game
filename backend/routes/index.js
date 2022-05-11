@@ -1,8 +1,21 @@
 const express = require("express");
+const csurf = require("csurf");
 
 const apiRouter = require("./api");
 
 const router = express.Router();
+
+if (process.env.NODE_ENV === "production") {
+  router.use(
+    csurf({
+      cookie: {
+        secure: true,
+        sameSite: "Lax",
+        httpOnly: true,
+      },
+    })
+  );
+}
 
 router.use("/api", apiRouter);
 

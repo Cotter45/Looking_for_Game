@@ -68,6 +68,8 @@
   align-items: center;
   gap: 10px;
   border-radius: 0 0 0 5px;
+  background: linear-gradient(var(--dark-background) 95%, var(--light-accent));
+  background: radial-gradient(var(--dark-background) 90%, var(--light-accent));
 }
 
 .nav_menu_row {
