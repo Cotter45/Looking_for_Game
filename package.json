@@ -9,7 +9,7 @@
     "dev:frontend": "npm install --prefix frontend start",
     "sequelize": "npm run --prefix backend sequelize",
     "sequelize-cli": "npm run --prefix backend sequelize-cli",
-    "start": "NODE_ENV='production' npm start --prefix backend",
+    "start": "NODE_ENV='production' npx sequelize db:migrate && npx sequelize db:seed:all && npm start --prefix backend",
     "migrate": "npx sequelize db:migrate && npx sequelize db:seed:all",
     "test": "npm test --prefix backend"
   },
