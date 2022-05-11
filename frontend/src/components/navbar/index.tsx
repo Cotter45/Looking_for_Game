@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { login, logout } from '../../context/store/session';
-import { useAppDispatch, useAppSelector } from '../../context/store/utils/store_utils';
 import NavMenu from './navmenu';
 
 import './navbar.css';
 
 function NavBar() {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
   const [isOpen, setIsOpen] = useState(false);
 

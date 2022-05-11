@@ -5,7 +5,7 @@ import Splash from "../components/home";
 
 
 function Home() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState('');
@@ -37,25 +37,17 @@ function Home() {
         </ul>
       </header>
       <Splash />
-          {/* <img
-            style={{ cursor: "pointer" }}
-            onClick={() => {
-              setModalImage(
-                process.env.NODE_ENV === "production"
-                  ? window.location.origin + "/static/resized/acadia_2.png"
-                  : "http://localhost:5000/static/resized/acadia_2.png"
-              );
-              setShowModal(!showModal);
-            }}
-            className="image"
-            src={
-              process.env.NODE_ENV === "production"
-                ? window.location.origin + "/static/resized/acadia_2.png"
-                : "http://localhost:5000/static/resized/acadia_2.png"
-            }
-            alt="Park test example"
-          /> */}
-      {/* {showModal && (
+        <img
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            setModalImage("/random.jpeg");
+            setShowModal(!showModal);
+          }}
+          className="image"
+          src={"/random.jpeg"}
+          alt="Park test example"
+        />
+      {showModal && (
         <Modal onClose={closeModal}>
           <img
             style={{ cursor: "pointer" }}
@@ -65,7 +57,7 @@ function Home() {
             alt="Park test example"
           />
         </Modal>
-      )} */}
+      )}
     </main>
   );
 }
