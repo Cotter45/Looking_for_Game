@@ -10,4 +10,6 @@ COPY ./ ./
 
 RUN npm i
 
+# ENV NODE_ENV=production
+
 CMD ["npm", "start"]
