@@ -1,5 +1,6 @@
 const express = require("express");
 const csurf = require("csurf");
+const path = require("path");
 
 const apiRouter = require("./api");
 
@@ -20,6 +21,8 @@ if (process.env.NODE_ENV === "production") {
 router.use("/api", apiRouter);
 
 // Static routes
+router.use("/static", express.static(path.resolve(__dirname, '../public')));
+
 // Serve React build files in production
 if (process.env.NODE_ENV === "production") {
   const path = require("path");
@@ -54,6 +57,15 @@ if (process.env.NODE_ENV === "production") {
 
 // Add a XSRF-TOKEN cookie in development
 if (process.env.NODE_ENV !== "production") {
+  router.use(
+    csurf({
+      cookie: {
+        secure: true,
+        sameSite: "Lax",
+        httpOnly: true,
+      },
+    })
+  );
   router.get("/api/csrf/restore", (req, res) => {
     res.cookie("XSRF-TOKEN", req.csrfToken());
     res.status(201).json({});

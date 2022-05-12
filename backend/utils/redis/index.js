@@ -11,7 +11,11 @@ if (process.env.NODE_ENV === "production") {
     url: process.env.REDISTOGO_URL,
   });
 } else {
-  redisClient = redis.createClient(6379, '127.0.0.1');
+  redisClient = redis.createClient({
+    url: process.env.REDIS_URL,
+    auth_pass: process.env.REDIS_PASSWORD,
+    password: process.env.REDIS_PASSWORD
+  })
 }
 
 (async () => {
@@ -20,9 +24,8 @@ if (process.env.NODE_ENV === "production") {
   } catch (e) {
       console.log(e);
   }
-  redisClient.on("connect", () => {
-    console.log("Redis connected");
-  });
+  await redisClient.set("test", "Redis connected");
+  console.log(await redisClient.get("test"));
   redisClient.on('error', (err) => console.log('Redis Client Error', err));
 })();
 

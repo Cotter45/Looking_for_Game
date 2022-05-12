@@ -23,18 +23,17 @@ app.use(express.json());
 if (!isProduction) {
   // enable cors only in development
   app.use(cors());
+
   app.use('/test', testRouter);
-}
 
-// helmet helps set a variety of headers to better secure your app
-app.use(helmet({
-  contentSecurityPolicy: false
-}));
-
-app.use("/static", express.static(path.join(__dirname, 'public')));
-
-// Set the _csrf token and create req.csrfToken method
-if (isProduction) {
+  app.use(helmet({
+      crossOriginResourcePolicy: false,
+  }));
+} else {
+  // helmet helps set a variety of headers to better secure your app
+  app.use(helmet());
+  
+  // Set the _csrf token and create req.csrfToken method
   app.use(
     csurf({
       cookie: {
@@ -45,6 +44,7 @@ if (isProduction) {
     })
   );
 }
+
 
 app.use(routes); // Connect all the routes
 

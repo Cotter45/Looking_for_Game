@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAppSelector } from "../../../context/store/utils/store_utils";
+import isProductionImage from "../../../util/is_production_image";
 import Account from "./account";
 import Settings from "./settings";
 
@@ -19,7 +20,7 @@ function NavMenu({ setIsOpen }: NavMenuProps) {
         <section className="nav_menu_row fade_in">
           <img
             className="small_profile"
-            src={currentUser.profile_picture_url}
+            src={isProductionImage() + currentUser.profile_picture_url}
             alt="Profile"
           />
           <div className="column">

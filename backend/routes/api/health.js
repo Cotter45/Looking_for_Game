@@ -1,9 +1,10 @@
 const express = require("express");
-const { check } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 const os = require("os");
 const fs = require("fs");
 const path = require("path");
+
+const redisClient = require("../../utils/redis/index");
 
 const router = express.Router();
 
@@ -76,13 +77,12 @@ function getCPUInfo() {
 }}
 
 // route to get basic system health, connections, total ram usage, process uptime
-router.get("/health/:id", asyncHandler( async (req, res, next) => {
-  const { id } = req.params;
+router.get("/health", asyncHandler( async (req, res, next) => {
 
   try {
 
     // id is to get something from the cache to check cache ok
-    let cache;
+    const cache = await redisClient.getAsync("test");
 
     const freeMem = +(os.freemem() / (1024 * 1024).toFixed(2));
     const totalMem = +(os.totalmem() / (1024 * 1024).toFixed(2));

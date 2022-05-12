@@ -24,6 +24,11 @@
             "date": 1652264359849,
             "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-11.log",
             "hash": "5631e1a063e9f9e1286ee80e5ec4bfaa"
+        },
+        {
+            "date": 1652352209684,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-12.log",
+            "hash": "91c78386e90661f30d53617e89728432"
         }
     ],
     "hashType": "md5"
