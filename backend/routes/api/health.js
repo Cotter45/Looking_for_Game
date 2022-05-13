@@ -77,12 +77,13 @@ function getCPUInfo() {
 }}
 
 // route to get basic system health, connections, total ram usage, process uptime
-router.get("/health", asyncHandler( async (req, res, next) => {
+router.get("/", asyncHandler( async (req, res, next) => {
 
   try {
 
     // id is to get something from the cache to check cache ok
-    const cache = await redisClient.getAsync("test");
+    await redisClient.set("test", "test");
+    const cache = await redisClient.get("test");
 
     const freeMem = +(os.freemem() / (1024 * 1024).toFixed(2));
     const totalMem = +(os.totalmem() / (1024 * 1024).toFixed(2));
@@ -132,12 +133,10 @@ router.get("/health", asyncHandler( async (req, res, next) => {
 
       const data = {
         uptime: process.uptime(),
-        message: e,
-        data: new DataTransfer()
+        message: e.message,
       }
 
-      res.status(418).json(data);
-      return next(e);
+      return res.status(418).json(data);
   }
 }))
 
