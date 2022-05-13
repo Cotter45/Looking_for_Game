@@ -83,8 +83,8 @@ router.get("/", asyncHandler( async (req, res, next) => {
   try {
 
     // id is to get something from the cache to check cache ok
-    await redisClient.set("test", "test");
-    const cache = await redisClient.get("test");
+    // await redisClient.set("test", "test");
+    // const cache = await redisClient.get("test");
 
     const freeMem = +(os.freemem() / (1024 * 1024).toFixed(2));
     const totalMem = +(os.totalmem() / (1024 * 1024).toFixed(2));
@@ -179,7 +179,7 @@ router.get('/logs/today', asyncHandler( async (req, res, next) => {
 
 // route to get todays error logs
 router.get('/errors/today', asyncHandler( async (req, res, next) => {
-  const date = new Date(Date.now());
+  const date = new Date();
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
   let day = date.getDay();
