@@ -52,7 +52,7 @@ function getCPUInfo() {
   
   let cpus = os.cpus();
 
-  let user = 0;
+  // let user = 0;
   let nice = 0;
   let sys = 0;
   let idle = 0;
@@ -62,14 +62,15 @@ function getCPUInfo() {
   for (let cpu in cpus) {
     if (!cpus.hasOwnProperty(cpu)) continue;
 
-    user += cpus[cpu].times.user;
+    // user += cpus[cpu].times.user;
     nice += cpus[cpu].times.nice;
     sys += cpus[cpu].times.sys;
     irq += cpus[cpu].times.irq;
     idle += cpus[cpu].times.idle;
   }
 
-  total = user + nice + sys + idle + irq;
+  // total = user + nice + sys + idle + irq;
+  total = nice + sys + idle + irq;
 
   return {
     'idle': idle,
