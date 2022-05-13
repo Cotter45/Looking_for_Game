@@ -3,6 +3,7 @@ const asyncHandler = require("express-async-handler");
 const os = require("os");
 const fs = require("fs");
 const path = require("path");
+const readline = require("readline");
 
 const redisClient = require("../../utils/redis/index");
 
@@ -127,7 +128,7 @@ router.get("/", asyncHandler( async (req, res, next) => {
       percHeapUsed
     }
 
-    if (data) return res.status(200).json(data);
+    return res.status(200).json(data);
 
   } catch (e) {
 
