@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         otherKey: 'lfg_id'
       }
       LookingForGame.belongsToMany(models.User, gameMap);
-      LookingForGame.hasMany(models.Chat, { foreignKey: 'chat_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
+      LookingForGame.hasMany(models.Chat, { foreignKey: 'lfg_id', onDelete: 'CASCADE', hooks: true, foreignKeyConstraint: true });
       LookingForGame.belongsTo(models.UserGame, { foreignKey: 'game_id' });
     }
   }

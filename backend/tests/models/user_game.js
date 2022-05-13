@@ -5,7 +5,7 @@ const expect = chai.expect;
 
 chai.use(chaiHttp);
 
-describe("USER GAME DB Model Tests", function() {
+describe("USERGAME DB Model Tests", function() {
   const baseUrl = "http://localhost:5000/test";
   const testUserGame = {
     user_id: 1,
@@ -63,7 +63,7 @@ describe("USER GAME DB Model Tests", function() {
     expect(res.status).to.equal(200);
     expect(res.body).to.have.property("name", testUserGameUpdate.name);
   })
-
+  
   it ("Should delete a user game", async () => {
     const res = await chai.request(baseUrl)
       .delete(`/user_game/${testUserGameUpdate.name}`);
