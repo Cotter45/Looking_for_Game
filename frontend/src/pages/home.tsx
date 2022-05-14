@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { Modal } from "../context/modal/modal";
 import Splash from "../components/home";
+import isProductionImage from "../util/is_production_image";
 
 
 function Home() {
@@ -22,6 +23,7 @@ function Home() {
             This is the beginning of my lfg app!
           </p>
         </section>
+        
         <h3>Table of Contents</h3>
         <ul className="list">
           <li>

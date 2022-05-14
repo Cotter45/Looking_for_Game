@@ -104,7 +104,7 @@ router.get("/", asyncHandler( async (req, res, next) => {
       let total = 0;
 
       for (let type in cpu.times) {
-        total += cpu.tims[type];
+        total += cpu.times[type];
       }
 
       for (type in cpu.times) {
