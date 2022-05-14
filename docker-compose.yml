@@ -7,21 +7,20 @@ services:
     restart: always
     ports: 
       - "6379:6379"
-    command: redis-server --save "" --appendonly no --requirepass KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM= --
+    command: redis-server --save "" --appendonly no --requirepass redisPassword --
 
   # api: 
   #   build:
   #     dockerfile: Dockerfile
   #     context: "./backend"
-  #   image: myregistry.azurecr.io/api 
   #   restart: always
   #   depends_on:
   #     - redis 
   #   environment:
   #     REDIS_URL: redis
-  #     REDIS_PASSWORD: KyWACtlA2RfHEAoGiSho8aLZtzEj8n1+u/7eYT715xM=
+  #     REDIS_PASSWORD: redisPassword
   #   ports: 
-  #     - "80:5000"
+  #     - "5000:5000"
   #   volumes:
   #     - /app/node_modules
   #     - ./backend:/app:delegated 
