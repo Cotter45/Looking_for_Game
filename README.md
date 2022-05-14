@@ -8,9 +8,11 @@ This app is still under development
 
 ## To run locally
 1. Download the zip file
-2. cd into backend, create .env file with your db settings, npm i && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all && npm start
-3. seperate terminal
-4. cd frontend, npm i && npm start
+2. have postresql installed locally
+3. docker-compose up --build -d ( for redis )
+4. cd into backend, create .env file with your db settings & JWT setting, npm i && npx dotenv sequelize db:migrate && npx dotenv sequelize db:seed:all && npm start
+5. seperate terminal
+6. cd frontend, npm i && npm start
 
 - react app on localhost:3000
 - express app on locaclhost:5000
