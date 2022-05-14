@@ -2,9 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-let games = require("./combined_games.json");
-let categories = require("./game_categories.json");
-let genres = require("./game_genres.json");
+let games = require("./combined_games.json").slice(0, 250);
+let categories = require("./full_format_game_categories.json");
+let genres = require("./full_format_game_genres.json");
 
 const url = 'http://store.steampowered.com/api/appdetails?appids='
 
@@ -89,7 +89,13 @@ for (let category of categories) {
 }
 let tempGenres = [];
 for (let genre of genres) {
-  if (temp[genre.game_id]) tempGenres.push(genres);
+  if (temp[genre.game_id]) {
+    genre = {
+      game_id: genre.game_id,
+      genre_id: +genre.genre_id
+    }
+    tempGenres.push(genre);
+  }
   else continue;
 }
 

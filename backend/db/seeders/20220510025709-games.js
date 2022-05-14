@@ -8,7 +8,7 @@ module.exports = {
      *
      * Example:
      */
-   await queryInterface.bulkInsert('Games', games, {});
+   await queryInterface.bulkInsert('Games', games.slice(0, 250), {});
   },
 
   async down (queryInterface, Sequelize) {

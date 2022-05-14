@@ -27,6 +27,7 @@ module.exports = {
       },
       profile_picture_url: {
         type: Sequelize.TEXT,
+        defaultValue: "/static/no_profile_pic.jpeg"
       },
       hashedPassword: {
         type: Sequelize.STRING.BINARY,
