@@ -1,0 +1,45 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/seancotter/Desktop/lfg_project/backend/logs/.a138c58e72730922358594c9e982d3758dc23111-audit.json",
+    "files": [
+        {
+            "date": 1651920639976,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-07.log",
+            "hash": "3a7a185e49b90b683076214f53494a77"
+        },
+        {
+            "date": 1652152207694,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-09.log",
+            "hash": "138b58de6c2d7a8458dd639c1553977d"
+        },
+        {
+            "date": 1652211739316,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-10.log",
+            "hash": "e976a7179b81f7cda8d50823e2b099a1"
+        },
+        {
+            "date": 1652264359849,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-11.log",
+            "hash": "5631e1a063e9f9e1286ee80e5ec4bfaa"
+        },
+        {
+            "date": 1652352209684,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-12.log",
+            "hash": "91c78386e90661f30d53617e89728432"
+        },
+        {
+            "date": 1652437487504,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-13.log",
+            "hash": "5745c5df9456586e8863dc434b67519b"
+        },
+        {
+            "date": 1652526418036,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-14.log",
+            "hash": "9a9ae2f8c29158231707ed3d4c9c6a1b"
+        }
+    ],
+    "hashType": "md5"
+}

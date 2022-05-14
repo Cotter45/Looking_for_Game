@@ -8,7 +8,7 @@
     "sequelize-cli": "sequelize-cli",
     "start": "per-env",
     "build": "npx tsc",
-    "start:development": "concurrently \"npx tsc --watch\" \"nodemon -r dotenv/config ./bin/www\"",
+    "start:development": "concurrently \"npx tsc --watch\" \"nodemon -r dotenv/config ./dist/bin/www\"",
     "start:production": "NODE_ENV='production' node ./bin/www",
     "test": "mocha 'tests/**/*.js' --exit"
   },
