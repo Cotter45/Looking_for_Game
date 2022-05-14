@@ -120,7 +120,7 @@ router.get("/", asyncHandler( async (req, res, next) => {
       cache: cache ? 'Ok' : 'Error',
       freeMem,
       totalMem,
-      usedMemPerc,
+      usedMemPerc: +((totalMem - freeMem) * 100).toFixed(2),
       memFreePerc,
       avgCpuPerc: +(100 - (cpuIdle / cpus.length)).toFixed(2),
       currentCpuPerc,
