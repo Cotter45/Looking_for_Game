@@ -8,7 +8,7 @@
     "sequelize-cli": "sequelize-cli",
     "start": "per-env",
     "start:development": "pm2 start dev.config.js",
-    "start:production": "pm2 start prod.config.js",
+    "start:production": "pm2-runtime start prod.config.js --env production",
     "test": "mocha 'tests/**/*.js' --exit"
   },
   "keywords": [],
