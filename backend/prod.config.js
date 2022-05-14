@@ -5,10 +5,7 @@ module.exports = {
     node_args : '-r dotenv/config',
     watch: '.',
     instances: '4',
-    exec_mode: 'cluster',
-    env: {
-      NODE_ENV: 'production'
-    }
+    exec_mode: 'cluster'
   }],
 
   deploy : {
