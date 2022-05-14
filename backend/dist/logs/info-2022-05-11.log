@@ -1,0 +1,6 @@
+{"level":"info","message":"GET /api/csrf/restore 500 1244 - 9.452 ms","timestamp":"2022-05-11T10:16:31.762Z"}
+{"level":"info","message":"GET /api/session 200 1016 - 57.272 ms","timestamp":"2022-05-11T10:16:31.994Z"}
+{"level":"info","message":"GET /static/resized/acadia_2.png 200 79796 - 9.946 ms","timestamp":"2022-05-11T10:18:45.513Z"}
+{"level":"info","message":"GET /static/resized/random.jpeg 404 1294 - 19.722 ms","timestamp":"2022-05-11T10:19:19.855Z"}
+{"level":"info","message":"GET /api/csrf/restore 500 1244 - 24.429 ms","timestamp":"2022-05-12T02:37:29.039Z"}
+{"level":"info","message":"GET /api/session 304 - - 144.187 ms","timestamp":"2022-05-12T02:37:29.365Z"}
