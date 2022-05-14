@@ -195,3 +195,6 @@
 {"level":"info","message":"GET /api/csrf/restore 201 2 - 2.162 ms","timestamp":"2022-05-14T02:11:03.140Z"}
 {"level":"info","message":"GET /static/trip_gif.webp 304 - - 1.577 ms","timestamp":"2022-05-14T02:11:03.146Z"}
 {"level":"info","message":"GET /api/session 200 162 - 27.852 ms","timestamp":"2022-05-14T02:11:03.189Z"}
+{"level":"info","message":"GET /static/no_profile_pic.jpeg 304 - - 5.553 ms","timestamp":"2022-05-14T02:13:36.281Z"}
+{"level":"info","message":"DELETE /api/session 200 21 - 21.026 ms","timestamp":"2022-05-14T02:13:38.644Z"}
+{"level":"info","message":"POST /api/session 200 240 - 147.960 ms","timestamp":"2022-05-14T02:13:40.120Z"}
