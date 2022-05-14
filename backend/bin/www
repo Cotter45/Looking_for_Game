@@ -3,10 +3,11 @@
 const cluster = require("cluster");
 const totalCPUs = require("os").cpus().length;
 
-const { port } = require('../config');
+const { port } = require('../dist/config');
 
-const app = require('../app');
-const db = require('../db/models');
+const app = require('../dist/app');
+
+const db = require('../dist/db/models');
 
 if (cluster.isMaster) {
   console.log(`Master ${process.pid} is running`);

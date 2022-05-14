@@ -19,11 +19,8 @@ function Home() {
       <header id="top" className="section">
         <h2>Hello, World!</h2>
         <section>
-          <p>
-            This is the beginning of my lfg app!
-          </p>
+          <p>This is the beginning of my lfg app!</p>
         </section>
-        
         <h3>Table of Contents</h3>
         <ul className="list">
           <li>
@@ -39,16 +36,16 @@ function Home() {
         </ul>
       </header>
       <Splash />
-        <img
-          style={{ cursor: "pointer" }}
-          onClick={() => {
-            setModalImage("/random.jpeg");
-            setShowModal(!showModal);
-          }}
-          className="image"
-          src={"/random.jpeg"}
-          alt="Park test example"
-        />
+      <img
+        style={{ cursor: "pointer" }}
+        onClick={() => {
+          setModalImage("/random.jpeg");
+          setShowModal(!showModal);
+        }}
+        className="image"
+        src={"/random.jpeg"}
+        alt="Park test example"
+      />
       {showModal && (
         <Modal onClose={closeModal}>
           <img
