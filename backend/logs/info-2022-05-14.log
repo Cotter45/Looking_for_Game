@@ -641,3 +641,14 @@
 {"level":"info","message":"GET /api/csrf/restore 201 2 - 4.660 ms","timestamp":"2022-05-14T19:07:04.155Z"}
 {"level":"info","message":"GET /static/trip_gif.webp 304 - - 3.655 ms","timestamp":"2022-05-14T19:07:04.170Z"}
 {"level":"info","message":"GET /api/session 304 - - 234.613 ms","timestamp":"2022-05-14T19:07:04.417Z"}
+{"level":"info","message":"GET /static/trip_gif.webp 304 - - 3.390 ms","timestamp":"2022-05-14T19:08:07.519Z"}
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 1.577 ms","timestamp":"2022-05-14T19:08:07.535Z"}
+{"level":"info","message":"GET /api/session 304 - - 18.369 ms","timestamp":"2022-05-14T19:08:07.553Z"}
+{"level":"info","message":"GET /static/no_profile_pic.jpeg 304 - - 1.019 ms","timestamp":"2022-05-14T19:08:08.802Z"}
+{"level":"info","message":"DELETE /api/session 200 21 - 4.975 ms","timestamp":"2022-05-14T19:08:10.569Z"}
+{"level":"info","message":"POST /api/session 200 240 - 137.996 ms","timestamp":"2022-05-14T19:11:37.124Z"}
+{"level":"info","message":"GET /static/no_profile_pic.jpeg 304 - - 1.333 ms","timestamp":"2022-05-14T19:11:37.134Z"}
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 2.039 ms","timestamp":"2022-05-14T19:11:49.034Z"}
+{"level":"info","message":"GET /static/trip_gif.webp 304 - - 1.602 ms","timestamp":"2022-05-14T19:11:49.040Z"}
+{"level":"info","message":"GET /api/session 200 240 - 12.826 ms","timestamp":"2022-05-14T19:11:49.071Z"}
+{"level":"info","message":"GET /static/no_profile_pic.jpeg 304 - - 1.038 ms","timestamp":"2022-05-14T19:11:50.785Z"}
