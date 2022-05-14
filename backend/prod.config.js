@@ -4,10 +4,10 @@ module.exports = {
     script: 'bin/www',
     node_args : '-r dotenv/config',
     watch: '.',
-    instances: 'max',
+    instances: '4',
     exec_mode: 'cluster',
     env_production: {
-      NODE_ENV: 'production'
+      NODE_ENV: process.env.NODE_ENV || 'production',
     }
   }]
 };
