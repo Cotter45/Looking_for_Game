@@ -1,3 +1,0 @@
-{"level":"error","message":"500 - req.csrfToken is not a function - /api/csrf/restore - GET - ::ffff:127.0.0.1","timestamp":"2022-05-11T10:16:31.755Z"}
-{"level":"error","message":"404 - The requested resource couldn't be found. - /static/resized/random.jpeg - GET - ::1","timestamp":"2022-05-11T10:19:19.849Z"}
-{"level":"error","message":"500 - req.csrfToken is not a function - /api/csrf/restore - GET - ::ffff:127.0.0.1","timestamp":"2022-05-12T02:37:29.022Z"}

@@ -1,4 +1,0 @@
-{"level":"error","message":"500 - column \"phone_number\" does not exist - /api/session - POST - ::ffff:127.0.0.1","timestamp":"2022-05-13T23:21:04.669Z"}
-{"level":"error","message":"404 - The requested resource couldn't be found. - /trip_gif - GET - ::1","timestamp":"2022-05-14T01:42:21.157Z"}
-{"level":"error","message":"404 - The requested resource couldn't be found. - /trip_gif.gif - GET - ::1","timestamp":"2022-05-14T01:42:43.329Z"}
-{"level":"error","message":"404 - The requested resource couldn't be found. - /static/trip_gif2.webp - GET - ::1","timestamp":"2022-05-14T02:08:04.131Z"}
