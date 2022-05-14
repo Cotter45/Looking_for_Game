@@ -4,3 +4,7 @@
 {"level":"info","message":"GET /static/no_profile_pic.jpeg 304 - - 1.343 ms","timestamp":"2022-05-14T16:16:26.379Z"}
 {"level":"info","message":"DELETE /api/session 200 21 - 25.425 ms","timestamp":"2022-05-14T16:16:28.641Z"}
 {"level":"info","message":"POST /api/session 200 240 - 136.903 ms","timestamp":"2022-05-14T16:16:29.801Z"}
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 10.566 ms","timestamp":"2022-05-14T16:29:10.731Z"}
+{"level":"info","message":"GET /static/trip_gif.webp 304 - - 6.746 ms","timestamp":"2022-05-14T16:29:10.736Z"}
+{"level":"info","message":"GET /api/session 200 240 - 45.585 ms","timestamp":"2022-05-14T16:29:10.792Z"}
+{"level":"info","message":"GET /static/no_profile_pic.jpeg 304 - - 1.038 ms","timestamp":"2022-05-14T16:29:12.245Z"}
