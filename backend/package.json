@@ -9,7 +9,7 @@
     "start": "per-env",
     "build": "tsc",
     "start:development": "concurrently \"npx tsc --watch\" \"nodemon -r dotenv/config ./dist/bin/www\"",
-    "start:production": "NODE_ENV='production' npm i typescript && npx tsc && node ./dist/bin/www",
+    "start:production": "NODE_ENV='production' node ./dist/bin/www",
     "test": "mocha 'tests/**/*.js' --exit"
   },
   "keywords": [],
