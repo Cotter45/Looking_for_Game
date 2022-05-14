@@ -10,7 +10,7 @@ describe("USERGAME DB Model Tests", function() {
   const testUserGame = {
     user_id: 1,
     steam_id: 123456789,
-    game_id: 1520,
+    game_id: 32,
     name: "testGame",
     description: "testDescription",
     image_url: "testImageUrl",
@@ -23,7 +23,7 @@ describe("USERGAME DB Model Tests", function() {
 
   it ("Should create a user game and return it", async () => {
     const res = await chai.request(baseUrl)
-      .post("/user_game")
+      .post("/userGame")
       .send(testUserGame);
     expect(res.status).to.equal(201);
     expect(res.body).to.have.property("name", testUserGame.name);
@@ -31,7 +31,7 @@ describe("USERGAME DB Model Tests", function() {
 
   it("Should return a user game and all associations", async () => {
     const res = await chai.request(baseUrl)
-      .get(`/user_game/${testUserGame.name}`)
+      .get(`/userGame/${testUserGame.name}`)
       .set('Content-Type', 'application/json')
 
     expect(res).to.have.status(200);
@@ -58,7 +58,7 @@ describe("USERGAME DB Model Tests", function() {
 
   it ("Should update a user game", async () => {
     const res = await chai.request(baseUrl)
-      .put(`/user_game/${testUserGame.name}`)
+      .put(`/userGame/${testUserGame.name}`)
       .send(testUserGameUpdate);
     expect(res.status).to.equal(200);
     expect(res.body).to.have.property("name", testUserGameUpdate.name);
@@ -66,7 +66,7 @@ describe("USERGAME DB Model Tests", function() {
   
   it ("Should delete a user game", async () => {
     const res = await chai.request(baseUrl)
-      .delete(`/user_game/${testUserGameUpdate.name}`);
+      .delete(`/userGame/${testUserGameUpdate.name}`);
     expect(res.status).to.equal(200);
     expect(res.body).to.have.property("message", "Looking for Game deleted");
   })

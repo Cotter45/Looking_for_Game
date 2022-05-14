@@ -14,7 +14,7 @@ const { environment } = require("./config");
 const isProduction = environment === "production";
 const winston_1 = require("./utils/winston");
 const winston_2 = __importDefault(require("./utils/winston"));
-const testRouter = require("./routes/api/test_models");
+const test_models_1 = __importDefault(require("./routes/api/test_models"));
 const app = (0, express_1.default)();
 app.use((0, morgan_1.default)(':method :url :status :res[content-length] - :response-time ms', { stream: winston_1.stream }));
 app.use((0, cookie_parser_1.default)());
@@ -22,7 +22,7 @@ app.use(express_1.default.json());
 if (!isProduction) {
     // enable cors only in development
     app.use((0, cors_1.default)());
-    app.use('/test', testRouter);
+    app.use('/test', test_models_1.default);
     app.use((0, helmet_1.default)({
         crossOriginResourcePolicy: false,
         contentSecurityPolicy: false
@@ -57,6 +57,7 @@ app.use((err, _req, _res, next) => {
     // check if error is a Sequelize error:
     if (err instanceof sequelize_1.ValidationError) {
         error = new Error("Validation Error");
+        error.status = 500;
         error.errors = err.errors.map((e) => e.message);
         error.title = 'Validation error';
     }

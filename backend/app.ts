@@ -11,7 +11,7 @@ const { environment } = require("./config")
 const isProduction = environment === "production";
 import { stream } from './utils/winston';
 import winston from "./utils/winston";
-const testRouter = require("./routes/api/test_models");
+import testRouter from "./routes/api/test_models";
   
 const app: Express = express();
 
@@ -61,11 +61,12 @@ app.use((_req: Request, _res: Response, next: NextFunction) => {
 });
 
 // Process sequelize errors
-app.use((err: ValidationError, _req: Request, _res: Response, next: NextFunction) => {
+app.use((err: any, _req: Request, _res: Response, next: NextFunction) => {
   let error;
   // check if error is a Sequelize error:
   if (err instanceof ValidationError) {
     error = new Error("Validation Error");
+    error.status = 500;
     error.errors = err.errors.map((e: Error) => e.message);
     error.title = 'Validation error';
   }

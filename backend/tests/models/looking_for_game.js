@@ -10,20 +10,20 @@ describe('LOOKING_FOR_GAME DB Tests', () => {
   let gameId;
   before( async () => {
     const testUserGame = {
-    user_id: 1,
-    steam_id: 123456789,
-    game_id: 1520,
-    name: "testGame",
-    description: "testDescription",
-    image_url: "testImageUrl",
-    is_free: true,
-    price: 0,
-  }
-  const res = await chai.request(baseUrl)
-    .post("/user_game")
-    .send(testUserGame);
+      user_id: 1,
+      steam_id: 123456789,
+      game_id: 32,
+      name: "testGame",
+      description: "testDescription",
+      image_url: "testImageUrl",
+      is_free: true,
+      price: 0,
+    }
+    const res = await chai.request(baseUrl)
+      .post("/userGame")
+      .send(testUserGame);
 
-  gameId = res.body.id;
+    gameId = res.body.id;
   });
   const updateTestLookingForGame = {
     title: "updateTestLookingForGame",
@@ -39,7 +39,7 @@ describe('LOOKING_FOR_GAME DB Tests', () => {
     }
 
     const res = await chai.request(baseUrl)
-      .post("/looking_for_game")
+      .post("/lookingForGame")
       .send(testLookingForGame);
 
     expect(res.status).to.equal(201);
@@ -53,7 +53,7 @@ describe('LOOKING_FOR_GAME DB Tests', () => {
 
   it("Should return a LookingForGame and all associations", async () => {
     const res = await chai.request(baseUrl)
-      .get(`/looking_for_game/testLookingForGame`)
+      .get(`/lookingForGame/testLookingForGame`)
       .set('Content-Type', 'application/json')
 
     expect(res).to.have.status(200);
@@ -77,7 +77,7 @@ describe('LOOKING_FOR_GAME DB Tests', () => {
 
   it("Should update a LookingForGame and return it", async () => {
     const res = await chai.request(baseUrl)
-      .put(`/looking_for_game/testLookingForGame`)
+      .put(`/lookingForGame/testLookingForGame`)
       .send(updateTestLookingForGame);
 
     expect(res).to.have.status(200);
@@ -86,7 +86,7 @@ describe('LOOKING_FOR_GAME DB Tests', () => {
 
   it("Should delete a LookingForGame and return success", async () => {
     const res = await chai.request(baseUrl)
-      .delete(`/looking_for_game/${updateTestLookingForGame.title}`);
+      .delete(`/lookingForGame/${updateTestLookingForGame.title}`);
 
     expect(res).to.have.status(200);
     expect(res.body).to.have.property("message", "Looking for Game deleted");
@@ -94,8 +94,6 @@ describe('LOOKING_FOR_GAME DB Tests', () => {
 
   after (async () => {
     const res = await chai.request(baseUrl)
-      .delete(`/user_game/testGame`);
-    expect(res.status).to.equal(200);
-    expect(res.body).to.have.property("message", "Looking for Game deleted");
+      .delete(`/userGame/testGame`);
   })
 });
