@@ -144,7 +144,7 @@ router.get("/", asyncHandler( async (req, res, next) => {
 
 // route to get todays logs
 router.get('/logs/today', asyncHandler( async (req, res, next) => {
-  const date = new Date(Date.now());
+  const date = new Date();
   const year = date.getFullYear();
   let month = date.getMonth() + 1;
   let day = date.getDay();
@@ -263,7 +263,7 @@ router.get('/logs/week', asyncHandler( async (req, res, next) => {
 }))
 
 // route to get 1 weeks worth of error logs
-router.get('/logs/week', asyncHandler( async (req, res, next) => {
+router.get('/errors/week', asyncHandler( async (req, res, next) => {
 
   const dates = [...Array(7)].map((_, i) => {
     const date = new Date();
@@ -359,7 +359,7 @@ router.get('/logs/two_week', asyncHandler( async (req, res, next) => {
 }))
 
 // route to get 2 weeks worth of error logs
-router.get('/logs/two_week', asyncHandler( async (req, res, next) => {
+router.get('/errors/two_week', asyncHandler( async (req, res, next) => {
 
   const dates = [...Array(14)].map((_, i) => {
     const date = new Date();
