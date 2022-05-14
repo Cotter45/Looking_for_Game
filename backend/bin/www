@@ -8,19 +8,19 @@ const { port } = require('../config');
 const app = require('../app');
 const db = require('../db/models');
 
-if (cluster.isMaster) {
-  console.log(`Master ${process.pid} is running`);
+// if (cluster.isMaster) {
+//   console.log(`Master ${process.pid} is running`);
     
-  // Fork workers.
-  for (let i = 0; i < (totalCPUs / 2); i++) {
-    cluster.fork();
-  }
+//   // Fork workers.
+//   for (let i = 0; i < (totalCPUs / 2); i++) {
+//     cluster.fork();
+//   }
   
-  cluster.on("exit", (worker, code, signal) => {
-    console.log(`worker ${worker.process.pid} died`);
-    cluster.fork();
-  });
-} else {
+//   cluster.on("exit", (worker, code, signal) => {
+//     console.log(`worker ${worker.process.pid} died`);
+//     cluster.fork();
+//   });
+// } else {
 
   // Check the database connection before starting the app
   db.sequelize
@@ -35,4 +35,4 @@ if (cluster.isMaster) {
       console.log('Database connection failure.');
       console.error(err);
     });
-};
+// };
