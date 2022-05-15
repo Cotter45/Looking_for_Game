@@ -1,4 +1,4 @@
-module.exports = {
+export = {
   environment: process.env.NODE_ENV || "development",
   port: process.env.PORT || 5000,
   db: {

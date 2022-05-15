@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 const asyncHandler = require("express-async-handler");
-
-const { Chat, Friend, LookingForGame, Message, Photo, User, Game, Category, Genre, UserGameGenre, UserGameCategory, UserGame, UsersLookingForGame, Video } = require("../../db/models");
+// Chat, Friend,  Message, Photo,  UserGameGenre, UserGameCategory,  UsersLookingForGame, Video 
+const { LookingForGame, User, Game, Category, Genre, UserGame } = require("../../db/models");
 
 const router = express.Router();
 

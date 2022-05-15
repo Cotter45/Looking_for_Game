@@ -2,7 +2,7 @@ import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { Modal } from "../context/modal/modal";
 import Splash from "../components/home";
-import isProductionImage from "../util/is_production_image";
+// import isProductionImage from "../util/is_production_image";
 
 
 function Home() {

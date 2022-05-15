@@ -1,5 +1,5 @@
 'use strict';
-import Validator, { Model } from 'sequelize';
+import { Model } from 'sequelize';
 
 const bcrypt = require("bcryptjs");
 
