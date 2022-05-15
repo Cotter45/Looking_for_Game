@@ -10,6 +10,7 @@ function Home() {
 
   const [showModal, setShowModal] = useState(false);
   const [modalImage, setModalImage] = useState('');
+  const [display, setDisplay] = useState('');
 
   const closeModal = () => {
     setShowModal(false);
@@ -18,7 +19,11 @@ function Home() {
     <main className="main_container fade_in">
       <header id="top">
         <div className="monitor">
-          <div className="monitor_screen"></div>
+          <div className="monitor_screen">
+            {!display && <h2 className='fade_in'>Default</h2>}
+            {display === "sign_up" && <h2 className="fade_in">Sign Up</h2>}
+            {display === "sign_in" && <h2 className="fade_in">Sign In</h2>}
+          </div>
           <div className="monitor_stand">
             <div className="stand"></div>
             <div className="base"></div>
@@ -29,12 +34,14 @@ function Home() {
             <div className="stick_rod"></div>
             <div className="stick_under"></div>
           </div>
-          <div className='select'>Sign Up</div>
-          <div className='start'>Sign In</div>
-          <div className='under_buttonA'>
+          <div onClick={() => setDisplay("sign_up")} className="select">
+            Sign Up
+          </div>
+          <div onClick={() => setDisplay("sign_in")} className="start">Sign In</div>
+          <div className="under_buttonA">
             <div className="select_button">A</div>
           </div>
-          <div className='under_buttonB'>
+          <div onClick={() => setDisplay("")} className="under_buttonB">
             <div className="back_button">B</div>
           </div>
           <div className="left_handle"></div>

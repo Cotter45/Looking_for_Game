@@ -375,7 +375,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .monitor {
-  height: 400px;
+  height: 50vh;
   width: 90vw;
   display: flex;
   flex-direction: column;
@@ -384,7 +384,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .monitor_screen {
-  height: 300px;
+  height: 80%;
   width: 100%;
   border: 7px solid var(--light-accent);
   box-shadow: 0 0 15px var(--dark-accent);
@@ -411,7 +411,7 @@ h1,h2,h3,h4,h5,h6 {
   position: absolute;
   background-color: var(--light-background);
   position: absolute;
-  bottom: 55px;
+  bottom: 13%;
   z-index: 1;
 }
 
@@ -424,12 +424,14 @@ h1,h2,h3,h4,h5,h6 {
   border-style: groove;
   position: absolute;
   bottom: 20px;
+  background: linear-gradient(to bottom, var(--dark-background) 5%, var(--light-background));
 }
 
 .controller_body {
   width: 400px;
   height: 200px;
   background-color: #323232;
+  background: radial-gradient(var(--light-background) 60%, var(--dark-background));
   color: white;
   position: relative;
   border-radius: 25px;
