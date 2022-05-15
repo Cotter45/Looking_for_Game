@@ -16,24 +16,23 @@ function Home() {
   }
   return (
     <main className="main_container fade_in">
-      <header id="top" className="section">
-        <h2>Hello, World!</h2>
-        <section>
-          <p>This is the beginning of my lfg app!</p>
-        </section>
-        <h3>Table of Contents</h3>
-        <ul className="list">
-          <li>
-            <a className="scroll" href="#parks">
-              Parks - {window.location.origin + "/api/parks"}
-            </a>
-          </li>
-          <li>
-            <a className="scroll" href="#cocktails">
-              Cocktails - {window.location.origin + "/api/cocktails"}
-            </a>
-          </li>
-        </ul>
+      <header id="top">
+        <div className="controller_body">
+          <div className="stick">
+            <div className="stick_rod"></div>
+            <div className="stick_under"></div>
+          </div>
+          <div className='select'>Sign Up</div>
+          <div className='start'>Sign In</div>
+          <div className='under_buttonA'>
+            <div className="select_button">A</div>
+          </div>
+          <div className='under_buttonB'>
+            <div className="back_button">B</div>
+          </div>
+          <div className="left_handle"></div>
+          <div className="right_handle"></div>
+        </div>
       </header>
       <Splash />
       <img

@@ -62,13 +62,14 @@
   position: absolute;
   right: 0;
   top: 75px;
+  z-index: 10;
   padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   border-radius: 0 0 0 5px;
-  background: linear-gradient(var(--dark-background) 95%, var(--light-accent));
+  /* background: linear-gradient(var(--dark-background) 95%, var(--light-accent)); */
   background: radial-gradient(var(--dark-background) 90%, var(--light-accent));
 }
 

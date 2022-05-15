@@ -240,6 +240,7 @@ h1,h2,h3,h4,h5,h6 {
   top: 0;
   left: 0;
   object-fit: cover;
+  opacity: .2;
 }
 
 .splash_title {
@@ -250,7 +251,8 @@ h1,h2,h3,h4,h5,h6 {
   background-color: var(--dark-accent);
   font-size: 40px;
   color: #fff;
-  mix-blend-mode: hard-light;
+  /* mix-blend-mode: hard-light; */
+  mix-blend-mode: multiply;
   margin: 0;
 }
 
@@ -396,6 +398,207 @@ h1,h2,h3,h4,h5,h6 {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* MAIN PAGE CONTROLLER */
+
+.controller_body {
+  width: 400px;
+  height: 200px;
+  background-color: #323232;
+  color: white;
+  position: relative;
+  border-radius: 25px;
+  border: 5px solid var(--light-accent);
+  border-style: double;
+  box-shadow: 0 0 10px var(--dark-accent);
+}
+
+.stick {
+  background-color: #212121;
+  min-width: 60px;
+  /* width: 8vw; */
+  min-height: 60px;
+  /* height: 8vw; */
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  z-index: 3;
+  border-radius: 50%;
+  border: 1px solid var(--light-accent);
+  border-style:groove;
+  transition: border .2s ease-in-out;
+}
+
+.stick:hover {
+  border: 2px solid var(--light-accent);
+  cursor: pointer;
+}
+
+.stick:after {
+  content: "";
+  background-color: white;
+  height: 30%;
+  width: 5px;
+  position: absolute;
+  right: 30%;
+  top: 20%;
+  z-index: 4;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+
+.select {
+  position: absolute;
+  top: 10%;
+  left: 32%;
+  font-size: .8em;
+  min-width: 50px;
+  text-align: center;
+}
+
+.select:after {
+  content: "";
+  background-color: var(--dark-background);
+  position: absolute;
+  top: 20px;
+  left: -10%;
+  width: 120%;
+  min-width: 50px;
+  height: 15px;
+  border-radius: 15%;
+  border: 1px solid var(--light-accent);
+  border-style: outset;
+  transition: border .2s ease-in-out;
+}
+
+.select:hover:after {
+  border: 2px solid var(--light-accent);
+  cursor: pointer;
+}
+
+.start {
+  position: absolute;
+  top: 10%;
+  right: 32%;
+  font-size: .8em;
+  min-width: 50px;
+  text-align: center;
+}
+
+.start:after {
+  content: "";
+  background-color: var(--dark-background);
+  position: absolute;
+  top: 20px;
+  left: -10%;
+  width: 120%;
+  min-width: 50px;
+  height: 15px;
+  border-radius: 15%;
+  border: 1px solid var(--light-accent);
+  border-style: outset;
+  transition: border .2s ease-in-out;
+}
+
+.start:hover:after {
+  border: 2px solid var(--light-accent);
+  cursor: pointer;
+}
+
+.under_buttonA {
+  background-color: black;
+  min-width: 50px;
+  /* width: 6vw; */
+  min-height: 50px;
+  /* height: 6vw; */
+  position: absolute;
+  top: 35%;
+  right: 8%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.under_buttonA:after {
+  content: "";
+  border: 1px solid var(--light-accent);
+  border-style: inset;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  /* z-index: 1; */
+  transition: border .2s ease-in-out;
+}
+
+.under_buttonA:hover:after {
+  border: 2px solid var(--light-accent);
+  cursor: pointer;
+}
+
+.select_button {
+  background-color: rgb(159, 15, 15);
+  min-width: 40px;
+  /* width: 5vw; */
+  min-height: 40px;
+  /* height: 5vw; */
+  position: absolute;
+  /* z-index: 1; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.under_buttonB {
+  background-color: black;
+  min-width: 50px;
+  /* width: 6vw; */
+  min-height: 50px;
+  /* height: 6vw; */
+  position: absolute;
+  top: 50%;
+  right: 22%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.under_buttonB:after {
+  content: "";
+  border: 1px solid var(--light-accent);
+  border-style: inset;
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  border-radius: 50%;
+  /* z-index: 3; */
+}
+
+.under_buttonB:hover:after {
+  border: 2px solid var(--light-accent);
+  cursor: pointer;
+}
+
+.back_button {
+  background-color: rgb(159, 15, 15);
+  min-width: 40px;
+  /* width: 5vw; */
+  min-height: 40px;
+  /* height: 5vw; */
+  position: absolute;
+  /* top: 145px;
+  right: 20%; */
+  /* z-index: 3; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 1200px) {
