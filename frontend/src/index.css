@@ -222,40 +222,6 @@ h1,h2,h3,h4,h5,h6 {
   -webkit-border-radius: 5px;
 }
 
-.splash_header {
-  width: fit-content;
-  height: fit-content;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-}
-
-.splash_header img {
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  opacity: .2;
-}
-
-.splash_title {
-  border-radius: 10px;
-  padding: 0 25px;
-  width: 100%;
-  height: 100%;
-  background-color: var(--dark-accent);
-  font-size: 40px;
-  color: #fff;
-  /* mix-blend-mode: hard-light; */
-  mix-blend-mode: multiply;
-  margin: 0;
-}
-
 .section {
   background-color: var(--light-background);
   padding: 20px;
@@ -402,6 +368,64 @@ h1,h2,h3,h4,h5,h6 {
 
 /* MAIN PAGE CONTROLLER */
 
+#top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monitor {
+  height: 400px;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.monitor_screen {
+  height: 300px;
+  width: 100%;
+  border: 7px solid var(--light-accent);
+  box-shadow: 0 0 15px var(--dark-accent);
+  border-radius: 10px;
+  border-style: double;
+}
+
+.monitor_stand {
+  width: 80%;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stand {
+  height: 50px;
+  width: 6%;
+  max-width: 40px;
+  border: 5px solid var(--light-accent);
+  box-shadow: 0 0 15px var(--dark-accent);
+  border-radius: 10px;
+  border-style: groove;
+  position: absolute;
+  background-color: var(--light-background);
+  position: absolute;
+  bottom: 55px;
+  z-index: 1;
+}
+
+.base {
+  height: 60px;
+  width: 50%;
+  border: 5px solid var(--light-accent);
+  box-shadow: 0 0 15px var(--dark-accent);
+  border-radius: 10px;
+  border-style: groove;
+  position: absolute;
+  bottom: 20px;
+}
+
 .controller_body {
   width: 400px;
   height: 200px;
@@ -411,7 +435,7 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 25px;
   border: 5px solid var(--light-accent);
   border-style: double;
-  box-shadow: 0 0 10px var(--dark-accent);
+  box-shadow: 0 0 15px var(--dark-accent);
 }
 
 .stick {
@@ -459,7 +483,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .select:after {
   content: "";
-  background-color: var(--dark-background);
+  background-color: #212121;
   position: absolute;
   top: 20px;
   left: -10%;
@@ -488,7 +512,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .start:after {
   content: "";
-  background-color: var(--dark-background);
+  background-color: #212121;
   position: absolute;
   top: 20px;
   left: -10%;

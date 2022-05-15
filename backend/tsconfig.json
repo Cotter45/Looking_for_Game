@@ -22,5 +22,7 @@
   "include": [
     "**/*"
   ],
-  "exclude": ["bin"]
+  "exclude": [
+    "bin"
+  ]
 }

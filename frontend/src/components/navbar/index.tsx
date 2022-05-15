@@ -25,11 +25,13 @@ function NavBar() {
       <section className="nav_bar">
         <section onClick={() => navigate("/")} className="splash_header">
           <img
-
             src={isProductionImage() + "/static/trip_gif.webp"}
             alt="trippy background"
           />
-          <h1 className="splash_title">LFG</h1>
+          <h1 className="splash_title"
+          >
+            LFG
+          </h1>
         </section>
         <button
           type="button"

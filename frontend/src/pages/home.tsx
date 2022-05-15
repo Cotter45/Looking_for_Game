@@ -17,6 +17,13 @@ function Home() {
   return (
     <main className="main_container fade_in">
       <header id="top">
+        <div className="monitor">
+          <div className="monitor_screen"></div>
+          <div className="monitor_stand">
+            <div className="stand"></div>
+            <div className="base"></div>
+          </div>
+        </div>
         <div className="controller_body">
           <div className="stick">
             <div className="stick_rod"></div>
