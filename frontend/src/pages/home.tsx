@@ -2,6 +2,7 @@ import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { Modal } from "../context/modal/modal";
 import Splash from "../components/home";
+import MonitorDefault from "../components/home/monitor_default";
 // import isProductionImage from "../util/is_production_image";
 
 
@@ -20,7 +21,7 @@ function Home() {
       <header id="top">
         <div className="monitor">
           <div className="monitor_screen">
-            {!display && <h2 className='fade_in'>Default</h2>}
+            {!display && <MonitorDefault />}
             {display === "sign_up" && <h2 className="fade_in">Sign Up</h2>}
             {display === "sign_in" && <h2 className="fade_in">Sign In</h2>}
           </div>

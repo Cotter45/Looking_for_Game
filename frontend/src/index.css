@@ -28,8 +28,11 @@
 .theme-light {
   --light-background: #f5f5f5;
   --dark-background: #DADED4;
-  --light-accent: #4D774E;
-  --dark-accent: #164A41;
+  --dark-background: #ccd0c6;
+  /* --light-accent: #4D774E;
+  --dark-accent: #164A41; */
+  --light-accent: #B4CFB0;
+  --dark-accent: #789395;
   --light-highlight: #FDF8F5;
   --dark-highlight: #393f4d;
   color: var(--dark-highlight);
@@ -226,7 +229,7 @@ h1,h2,h3,h4,h5,h6 {
   background-color: var(--light-background);
   padding: 20px;
   border-radius: 10px;
-  width: 95vw;
+  width: 90vw;
   max-width: 1400px;
   display: flex;
   flex-direction: column;
@@ -383,6 +386,14 @@ h1,h2,h3,h4,h5,h6 {
   position: relative;
 }
 
+.monitor_display {
+  background-color: var(--light-background);
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
 .monitor_screen {
   height: 80%;
   width: 100%;
@@ -481,6 +492,7 @@ h1,h2,h3,h4,h5,h6 {
   font-size: .8em;
   min-width: 50px;
   text-align: center;
+  color: var(--dark-highlight);
 }
 
 .select:after {
@@ -510,6 +522,7 @@ h1,h2,h3,h4,h5,h6 {
   font-size: .8em;
   min-width: 50px;
   text-align: center;
+  color: var(--dark-highlight);
 }
 
 .start:after {
