@@ -9,6 +9,11 @@
             "date": 1652544977986,
             "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-14.log",
             "hash": "0424a3ed1d2b85cfe4c82b1fd1313e7a"
+        },
+        {
+            "date": 1652665352514,
+            "name": "/Users/seancotter/Desktop/lfg_project/backend/logs/errors-2022-05-15.log",
+            "hash": "9dcce6008602299843781940ac1308f6"
         }
     ],
     "hashType": "md5"
