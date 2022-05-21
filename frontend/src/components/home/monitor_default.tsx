@@ -8,7 +8,7 @@ function MonitorDefault() {
     <div className='fade_in monitor_display'>
       {/* <img src={background} className='scene' alt='Mario Background' /> */}
       <div style={{ background: `url(${background}) 0 60% repeat-x` }} className="scene"></div>
-        <input type="checkbox" checked></input>
+        <input type="checkbox" defaultChecked></input>
         <img src={mario} className='mario' alt='Mario' />
       {/* </div> */}
     </div>

@@ -426,7 +426,7 @@ h1,h2,h3,h4,h5,h6 {
   animation: run 1s infinite;
   position: absolute;
   left: 5%;
-  bottom: 19%;
+  bottom: 22%;
   z-index: 1;
 }
 

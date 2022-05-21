@@ -52,3 +52,9 @@
 {"level":"info","message":"GET /api/csrf/restore 201 2 - 0.816 ms","timestamp":"2022-05-21T12:25:28.072Z"}
 {"level":"info","message":"GET /static/trip_gif.webp 304 - - 5.059 ms","timestamp":"2022-05-21T12:25:28.089Z"}
 {"level":"info","message":"GET /api/session 304 - - 34.790 ms","timestamp":"2022-05-21T12:25:28.140Z"}
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 1.510 ms","timestamp":"2022-05-21T12:27:07.840Z"}
+{"level":"info","message":"GET /static/trip_gif.webp 304 - - 1.651 ms","timestamp":"2022-05-21T12:27:07.853Z"}
+{"level":"info","message":"GET /api/session 304 - - 19.083 ms","timestamp":"2022-05-21T12:27:07.898Z"}
+{"level":"info","message":"GET /api/csrf/restore 201 2 - 3.821 ms","timestamp":"2022-05-21T12:27:38.826Z"}
+{"level":"info","message":"GET /static/trip_gif.webp 304 - - 1.079 ms","timestamp":"2022-05-21T12:27:38.837Z"}
+{"level":"info","message":"GET /api/session 304 - - 46.046 ms","timestamp":"2022-05-21T12:27:38.903Z"}
